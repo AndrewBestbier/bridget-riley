@@ -21,7 +21,7 @@ const colors = [
   "#7f8c8d",
 ];
 
-const draw = () => {
+const init = () => {
   const width = window.innerWidth;
   const height = window.innerHeight;
   document.getElementById("app").innerHTML = `
@@ -46,6 +46,10 @@ const transformedRect = (ctx, x, y) => {
   ctx.lineTo(x + 100, y - 50);
   ctx.lineTo(x + 100, y - 10);
   ctx.lineTo(x, y + 40);
-  ctx.fillStyle = colors[Math.floor(Math.random() * colors.length)];
+  const color = colors[Math.floor(Math.random() * colors.length)];
+  ctx.fillStyle = color;
+  ctx.strokeStyle = color;
   ctx.fill();
+  ctx.stroke();
+  // ctx.translate(0, -0.01);
 };
